@@ -1,11 +1,12 @@
 'use strict';
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const registerRoutes = require('./routes');
 
 // server config
 const port = process.env.PORT || 3000;
-
+app.use(cors());
 // register routes
 registerRoutes(app);
 
@@ -15,12 +16,12 @@ const start = () => {
         // start the server
         app.listen(port, () => {
             console.log(`Connected to Port ${port}`);
-            resolve()
+            resolve();
         });
     }).catch((error) => {
-        console.log(`failed to start server => ${error.message}`)
+        console.log(`failed to start server => ${error.message}`);
     });
-}
+};
 
 module.exports = start;
 
