@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "dev:server": "nodemon ./src/index.js",
-    "dev:client": "echo fill this in for the client dev env script"
+    "dev:client": "npm start --prefix ./src/client"
   },
   "author": "Antra-react",
   "dependencies": {
