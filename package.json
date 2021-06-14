@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./src/index.js",
     "dev:server": "nodemon ./src/index.js",
-    "dev:client": "npm start --prefix ./src/client"
+    "dev:client": "npm start --prefix ./src/client",
+    "preinstall": "cd ./src/client && npm install & cd.. && cd.."
   },
   "author": "Antra-react",
   "dependencies": {
