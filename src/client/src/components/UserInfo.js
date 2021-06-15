@@ -1,7 +1,6 @@
 import React from 'react';
 
 const UserInfo = (props) => {
-  // let [userInfo, setUserInfo] = useState(null);
   const { userInfo, setUserInfo } = props;
 
   const usernameAndAge = (userInfo === null)

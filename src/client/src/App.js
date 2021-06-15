@@ -3,7 +3,7 @@ import { getUsers, getHobbies, getListOfAgesOfUsersWithHobby } from './api/API';
 import UserInfo from './components/UserInfo';
 import HobbyCount from "./components/HobbyCount";
 
-import './SCSS_styles.scss';
+import './App.scss';
 
 const App = () => {
   let [userInfo, setUserInfo] = useState(null);
