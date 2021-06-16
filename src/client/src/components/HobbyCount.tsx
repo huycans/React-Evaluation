@@ -1,4 +1,4 @@
-import React, { FC, SelectHTMLAttributes } from "react";
+import React, { FC } from "react";
 import { HobbyCount } from "../interface";
 
 interface HobbyCountProps {

@@ -3,11 +3,10 @@ import { UserInfo } from "../interface";
 
 export interface UserInfoProp {
   userInfo: UserInfo[];
-  setUserInfo: () => void;
 }
 
 const UserInfo: FC<UserInfoProp> = (props) => {
-  const { userInfo, setUserInfo } = props;
+  const { userInfo } = props;
 
   const usernameAndAge =
     userInfo === null

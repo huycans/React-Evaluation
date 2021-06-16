@@ -5,10 +5,6 @@ import HobbyCount from "./components/HobbyCount";
 
 import "./App.scss";
 
-type ChangeEventType = Event & {
-  target: HTMLElement;
-};
-
 const App = function () {
   let [userInfo, setUserInfo] = useState(null);
   let [hobbies, setHobbies] = useState(null);
@@ -24,7 +20,7 @@ const App = function () {
     );
   };
 
-  //do this once when the app start up
+  //fetch data when the app start up, this will happen only once
   useEffect(() => {
     getUsers().then(
       (users) => {
@@ -43,7 +39,7 @@ const App = function () {
 
   return (
     <div className="app container">
-      <UserInfo userInfo={userInfo} setUserInfo={() => setUserInfo}></UserInfo>
+      <UserInfo userInfo={userInfo}></UserInfo>
       <HobbyCount
         handleSelect={handleSelect}
         hobbies={hobbies}
