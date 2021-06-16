@@ -1,3 +1,5 @@
+@import "~bootstrap/scss/bootstrap";
+
 #hobby {
   max-width: 120px;
 }
@@ -19,7 +21,7 @@ body {
     margin-bottom: 20px 0;
   }
 
-  select {
+  &__dropdown {
     margin-bottom: 20px;
   }
 }

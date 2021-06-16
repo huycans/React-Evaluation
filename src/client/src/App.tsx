@@ -3,7 +3,7 @@ import { getUsers, getHobbies, getListOfAgesOfUsersWithHobby } from "./api/API";
 import UserInfo from "./components/UserInfo";
 import HobbyCount from "./components/HobbyCount";
 
-import "./App.scss";
+import "./styles/App.scss";
 
 const App = function () {
   let [userInfo, setUserInfo] = useState(null);
@@ -12,8 +12,7 @@ const App = function () {
   let [hobbiesCountByAge, setHobbiesCountByAge] = useState(null);
 
   //handle when user select a hobby
-  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const hobby = e.currentTarget.value;
+  const handleSelect = (hobby: string) => {
     setSelectedHobby(hobby);
     getListOfAgesOfUsersWithHobby(hobby).then((ageGroups) =>
       setHobbiesCountByAge(ageGroups)

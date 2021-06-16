@@ -1,24 +1,37 @@
 import React, { FC } from "react";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
 import { HobbyCount } from "../api/APIinterface";
 
 interface HobbyCountProps {
   hobbies: string[];
   hobbiesCountByAge: HobbyCount[];
-  handleSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleSelect: (hobby: string) => void;
   selectedHobby: string;
 }
 
 const HobbyCount: FC<HobbyCountProps> = (props) => {
   const { hobbies, hobbiesCountByAge, handleSelect, selectedHobby } = props;
 
-  const hobbyOptions =
-    hobbies === null
-      ? null
-      : hobbies.map((hobby) => (
-          <option key={hobby} value={hobby}>
+  const hobbiesDropdown =
+    hobbies === null ? null : (
+      <DropdownButton
+        className="user-hobby__dropdown"
+        id="hobby-dropdown-button"
+        title={selectedHobby || "Hobby"}
+        onSelect={(hobby) => handleSelect(hobby)}
+      >
+        {hobbies.map((hobby, ind) => (
+          <Dropdown.Item
+            active={selectedHobby == hobby}
+            key={hobby}
+            eventKey={hobby}
+          >
             {hobby}
-          </option>
-        ));
+          </Dropdown.Item>
+        ))}
+      </DropdownButton>
+    );
 
   const hobbyCountByAgeDisplay =
     hobbiesCountByAge === null ? null : (
@@ -51,16 +64,7 @@ const HobbyCount: FC<HobbyCountProps> = (props) => {
         <label className="hobby-label" htmlFor="hobby">
           Hobby:
         </label>
-        <select
-          className="text-center"
-          value={selectedHobby}
-          onChange={handleSelect}
-          name="hobby"
-          id="hobby"
-        >
-          <option value="Hobby">Hobby</option>
-          {hobbyOptions}
-        </select>
+        {hobbiesDropdown}
       </div>
       {hobbyCountByAgeDisplay}
     </div>
