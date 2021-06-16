@@ -13,3 +13,13 @@
 body {
   text-transform: capitalize;
 }
+
+.user-hobby {
+  .hobby-label {
+    margin-bottom: 20px 0;
+  }
+
+  select {
+    margin-bottom: 20px;
+  }
+}

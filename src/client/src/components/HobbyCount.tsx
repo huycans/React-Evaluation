@@ -48,7 +48,9 @@ const HobbyCount: FC<HobbyCountProps> = (props) => {
     <div className="user-hobby d-flex row justify-content-center flex-column text-center align-items-center">
       <h1>Age demographic of users with hobby</h1>
       <div className="d-flex row justify-content-center flex-column text-center align-items-center">
-        <label htmlFor="hobby">Hobby:</label>
+        <label className="hobby-label" htmlFor="hobby">
+          Hobby:
+        </label>
         <select
           className="text-center"
           value={selectedHobby}
