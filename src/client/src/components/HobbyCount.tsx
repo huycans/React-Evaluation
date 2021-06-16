@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { HobbyCount } from "../interface";
+import { HobbyCount } from "../api/APIinterface";
 
 interface HobbyCountProps {
   hobbies: string[];

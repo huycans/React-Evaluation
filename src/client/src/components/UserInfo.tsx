@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { UserInfo } from "../interface";
+import { UserInfo } from "../api/APIinterface";
 
 export interface UserInfoProp {
   userInfo: UserInfo[];
