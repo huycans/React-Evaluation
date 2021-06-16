@@ -1,0 +1,16 @@
+#hobby {
+  max-width: 120px;
+}
+
+.table {
+  max-width: 60%;
+}
+
+.app {
+  margin: 50px 20px;
+}
+
+body {
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=App.css.map */
